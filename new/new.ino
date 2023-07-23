@@ -12,7 +12,7 @@
 #define DHTTYPE DHT22
 
 DHT dht(DHTPIN, DHTTYPE);
-#define SERVER_IP "172.26.0.149"
+#define SERVER_IP "172.26.0.186"
 #define PORT "5000"
 #ifndef WIFI_ID
 #define WIFI_ID "abcd"
