@@ -1,10 +1,12 @@
 import PropTypes from 'prop-types';
 import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import {Link as RouterLink, useLocation } from 'react-router-dom';
 // @mui
 import { styled, alpha } from '@mui/material/styles';
 import { Box, Link,  Drawer, Typography, Avatar} from '@mui/material';
 import {Icon} from "@iconify/react";
+
+
 
 // mock
 import account from '../../../_mock/account';
@@ -13,6 +15,7 @@ import useResponsive from '../../../hooks/useResponsive';
 // components
 import Logo from '../../../components/logo';
 import Scrollbar from '../../../components/scrollbar';
+import InfoPage from '../../../pages/info';
 
 
 
@@ -85,19 +88,30 @@ export default function Nav({ openNav, onCloseNav }) {
             </Box>
           </div>
           <div>
-            <Box sx={{ mb: 5, mx: 2.5 }}>
-              <Link underline="none">
-                <StyledAccount>
-                  <Icon  icon={'material-symbols:info'}/>
-                  <Box sx={{ ml: 2 }}>
-                    <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
-                      Info
 
-                    </Typography>
-                  </Box>
-                </StyledAccount>
-              </Link>
-            </Box>
+            <RouterLink to="app" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <StyledAccount>
+                <Icon icon={'material-symbols:info'} />
+                <Box sx={{ ml: 2 }}>
+                  <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
+                    dashboard
+                  </Typography>
+                </Box>
+              </StyledAccount>
+            </RouterLink>
+          </div>
+          <div>
+
+            <RouterLink to="info" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <StyledAccount>
+                <Icon icon={'material-symbols:info'} />
+                <Box sx={{ ml: 2 }}>
+                  <Typography variant="subtitle2" sx={{ color: 'text.primary' }}>
+                    Info
+                  </Typography>
+                </Box>
+              </StyledAccount>
+            </RouterLink>
           </div></div>
       </Scrollbar>
 

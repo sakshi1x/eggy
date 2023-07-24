@@ -92,6 +92,8 @@ export default function DashboardAppPage() {
     setInterval(() => getSensorData(), 1000);
   }, [])
   const handleRelay1 = async () => {
+    setFanStatus2(!fanStatus2);
+    setResult2(fanStatus2 ? 'On' : 'Off');
     const response = await axios.post("http://localhost:5000/api/set-relay", {
       "relay1": !checkedRelay1,
       "relay2": checkedRelay2,
@@ -101,6 +103,8 @@ export default function DashboardAppPage() {
     getData()
   }
   const handleRelay2 = async () => {
+    setFanStatus2(!fanStatus2);
+    setResult2(fanStatus2 ? 'On' : 'Off');
     const response = await axios.post("http://localhost:5000/api/set-relay", {
       "relay1": checkedRelay1,
       "relay2": !checkedRelay2,
@@ -110,6 +114,8 @@ export default function DashboardAppPage() {
     getData()
   }
   const handleRelay3 = async () => {
+    setHumidifier(!humidifier);
+    setResult3(humidifier ? 'On' : 'Off');
     const response = await axios.post("http://localhost:5000/api/set-relay", {
       "relay1": checkedRelay1,
       "relay2": checkedRelay2,
@@ -119,6 +125,8 @@ export default function DashboardAppPage() {
     getData()
   }
   const handleRelay4 = async () => {
+    setBulbStatus(!bulbStatus);
+    setResult(bulbStatus ? 'On' : 'Off');
     const response = await axios.post("http://localhost:5000/api/set-relay", {
       "relay1": checkedRelay1,
       "relay2": checkedRelay2,
