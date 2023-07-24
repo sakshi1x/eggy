@@ -1,8 +1,8 @@
 // ----------------------------------------------------------------------
 
 const account = {
-  displayName: 'Hydrophonics',
-  email: 'demo@minimals.cc',
+  displayName: 'Eggy',
+  email: 'Eggy@gmail.com',
   photoURL: '/assets/images/avatars/avatar_default.jpg',
 };
 
