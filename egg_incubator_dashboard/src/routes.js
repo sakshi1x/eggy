@@ -11,27 +11,18 @@ import InfoPage from './pages/info';
 export default function Router() {
   const routes = useRoutes([
     {
-      path: '/dashboard',
+      path: '/',
       element: <DashboardLayout />,
       children: [
         { element: <Navigate to="/dashboard/app" />, index: true },
         { path: 'app', element: <DashboardAppPage /> },
-
-
-
+        { path: 'info', element: <InfoPage /> }, // Add this line if you want info as a child of the dashboard as well
       ],
-
-    },{
-      path:"/dashboard",
-      element: <DashboardLayout />,
-      children: [
-        { element: <Navigate to="/dashboard/info" />, index: true },
-        { path: 'info', element: <InfoPage/> },]
-
-    }
-    // {path:'info',element:<InfoPage/>},
-
-
+    },
+    {
+      path: '*', // Catch-all route
+      element: <Navigate to="/dashboard" replace />, // Redirect to /dashboard
+    },
   ]);
 
   return routes;
