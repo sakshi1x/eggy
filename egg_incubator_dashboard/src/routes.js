@@ -21,7 +21,7 @@ export default function Router() {
     },
     {
       path: '*', // Catch-all route
-      element: <Navigate to="/dashboard" replace />, // Redirect to /dashboard
+      element: <Navigate to="/app" replace />, // Redirect to /dashboard
     },
   ]);
 
